@@ -1,9 +1,10 @@
 'use strict';
 
-const RTCAudioSourceSineWave = require('../../lib/server/webrtc/rtcaudiosourcesinewave');
+//const RTCAudioSourceSineWave = require('../../lib/server/webrtc/rtcaudiosourcesinewave');
+const RTCAudioSourceMic = require('../../lib/server/webrtc/rtcaudiosourcemic');
 
 function beforeOffer(peerConnection) {
-  const source = new RTCAudioSourceSineWave();
+  const source = new RTCAudioSourceMic();
   const track = source.createTrack();
   peerConnection.addTrack(track);
 
